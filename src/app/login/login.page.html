@@ -1,0 +1,39 @@
+<ion-header text-center>
+  <ion-toolbar>
+    <ion-title><img src="../../assets/img/logo.jpg" width="90px"><br>Use your brain, don't fry it!</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content text-center>
+    <ion-button color="secondary" shape="round" [routerLink]="['/home']">
+      <ion-icon name="home"></ion-icon>
+    </ion-button><br><br>
+    <!-- <ion-button color="secondary" shape="round" [routerLink]="['/profile']">
+      <ion-icon name="person"></ion-icon>
+    </ion-button> -->
+    <b style="font-size: 18px">LOGIN</b>
+  <ion-item>
+    <ion-label>Email:</ion-label>
+    <ion-input [(ngModel)]="email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Password:</ion-label>
+    <ion-input [(ngModel)]="password" type="password"></ion-input>
+  </ion-item>
+
+  <ion-button color="secondary" shape="round"  (click)="login()" [routerLink]="['/category']">
+    <ion-icon name="log-in"></ion-icon>
+  </ion-button>
+
+  <!-- <ion-button color="secondary" shape="round" [routerLink]="['/profile']">
+    Profile
+    </ion-button> -->
+
+  <ion-button color="secondary" shape="round" (click)="resetPassword()">
+    Reset Password<ion-icon name="refresh"></ion-icon>
+  </ion-button>
+
+  <a [routerLink]="['/register']">Click here to register</a>
+
+</ion-content>

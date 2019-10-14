@@ -1,0 +1,22 @@
+<ion-header text-center>
+  <ion-toolbar>
+    <ion-title><img src="../../assets/img/logo.jpg" width="90px"><br>Use your brain, don't fry it!</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-list *ngFor="let resultz of results">
+      {{resultz.catID}}
+      Question: {{resultz.counter}}
+      {{resultz.questions}}
+      Chosen Answer: {{resultz.options.userAnswer}}
+
+      <h2 *ngIf="resultz.options.userBooleanScore">Correct Answer</h2>
+      <h2 *ngIf="!resultz.options.userBooleanScore">Wrong Answer</h2>
+    </ion-list>
+  </ion-card>
+  <ion-card>
+    <ion-button shape="round" [routerLink]="['/home']">Home</ion-button>
+  </ion-card>
+</ion-content>

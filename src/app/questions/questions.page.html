@@ -1,0 +1,38 @@
+<ion-header text-center>
+    <ion-toolbar>
+      <ion-title><img src="../../assets/img/logo.jpg" width="90px"><br>Use your brain, don't fry it!</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content text-center>
+    <ion-button color="secondary" shape="round" [routerLink]="['/category']">
+      <ion-icon name="arrow-back"></ion-icon>    
+    </ion-button><ion-button color="secondary" shape="round" [routerLink]="['/home']">
+      <ion-icon name="home"></ion-icon>
+    </ion-button>
+    <ion-button color="secondary" shape="round" [routerLink]="['/profile']">
+      <ion-icon name="person"></ion-icon>
+    </ion-button><br><br>
+    <b style="font-size: 18px">QUESTIONS</b><br>
+  <ion-card *ngFor="let quiz of Questions">
+    <ion-card-header>
+      <ion-card-title>
+        {{quiz.Question}}
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        <ion-radio-group (ionChange) = "setData($event,quiz)">
+          <ion-item *ngFor="let Answer of quiz.option">
+            <ion-label>{{Answer}}</ion-label>
+            <ion-radio slot="start" value="{{Answer}}"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button (click)="submit()">Submit</ion-button>
+  <!-- <ion-button [routerLink]="['/results']" (click)="submit()">Submit</ion-button> -->
+</ion-content>

@@ -1,0 +1,25 @@
+<ion-header text-center>
+  <ion-toolbar>
+    <ion-title><img src="../../assets/img/logo.jpg" width="90px"><br>Use your brain, don't fry it!<br></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content text-center>
+    <ion-button color="secondary"       shape="round" [routerLink]="['/home']">
+      <ion-icon name="home"></ion-icon>
+    </ion-button>
+  <ion-button color="secondary" shape="round" (click)="takeImage()"><ion-icon name="camera"></ion-icon></ion-button>
+  <ion-button color="secondary" shape="round" (click)="logOut()"><ion-icon name="log-out"></ion-icon></ion-button>
+ 
+
+  <ion-card *ngFor="let userz of user">
+      <img [src]="dp" *ngIf="dp">
+    <ion-card-content>
+      Name: {{userz.Name}} <br>
+      Age: {{userz.Age}} <br>
+      Gender: {{userz.Gender}} <br>
+      Email: {{userz.Email}}
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

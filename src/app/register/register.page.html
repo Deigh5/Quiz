@@ -1,0 +1,53 @@
+<ion-header text-center>
+  <ion-toolbar>
+    <ion-title><img src="../../assets/img/logo.jpg" width="90px"><br>Use your brain, don't fry it!</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content text-center>
+    <ion-button color="secondary" shape="round" [routerLink]="['/home']">
+      <ion-icon name="home"></ion-icon>
+    </ion-button><br><br>
+    <b style="font-size: 18px">REGISTER</b>
+  
+    <ion-item>
+      <ion-label>Name:</ion-label>
+      <ion-input [(ngModel)]="name"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Age:</ion-label>
+      <ion-input [(ngModel)]="age"></ion-input>
+    </ion-item><br>
+  
+    <ion-item>
+      <ion-radio-group (ionChange)="getGender($event)">
+        <ion-label>Gender:</ion-label>
+        <ion-item>
+          <ion-label>Female</ion-label>
+          <ion-radio value="female"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Male</ion-label>
+          <ion-radio value="male"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+  
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Email:</ion-label>
+      <ion-input [(ngModel)]="email"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Password:</ion-label>
+      <ion-input [(ngModel)]="password" type="password"></ion-input>
+    </ion-item>
+  
+    <ion-button color="secondary" shape="round" (click)="register()">
+      <ion-icon name="save"></ion-icon>
+    </ion-button>
+  
+</ion-content>
